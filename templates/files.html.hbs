@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Files</title>
+</head>
+<body>
+    <section id="hello">
+        <h1>File</h1>
+        New File
+        <ul>
+            {{#each files}}
+            <li>File Id: {{ this.fileid }}</li>
+            <li>Chunk: {{ this.chunk }}</li>
+            {{else}}
+            <p> No files yet</p>
+            {{/each}}
+        </ul>
+    </section>
+</body>
+</html>

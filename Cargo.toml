@@ -1,0 +1,23 @@
+[package]
+name = "blog"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rocket = { version = "0.5.0-rc.2", features=["json", "uuid"]}
+dotenvy = "0.15"
+serde = "1.0.152"
+rocket_dyn_templates = { version = "0.2", features = ["tera", "handlebars"] }
+diesel = { version = "2.0", features = ["postgres", "uuid", "r2d2"] }  # Enable the uuid feature in diesel
+uuid = { version = "1.4.0", features = ["serde", "v4", "fast-rng", "macro-diagnostics" ] }
+tokio = "1.30.0"
+multipart = "0.18.0"
+rocket-multipart-form-data = "0.10.7"
+
+# [dependencies.rocket_dyn_templates]
+# features = ["handlebars"]
+
+# [dependencies.rocket_contrib]
+# version = "0.4.4"
+# default-features = false
+# features = ["json"]
