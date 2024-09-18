@@ -1,6 +1,6 @@
 #[macro_use] extern crate rocket;
-#[macro_use] extern crate diesel;
 
+use diesel::prelude::*;
 use diesel::dsl::Limit;
 use rocket::{data::{ByteUnit, Limits, ToByteUnit}, launch, routes};
 use rocket_dyn_templates::{ Template };

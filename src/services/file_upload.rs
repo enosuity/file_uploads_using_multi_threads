@@ -72,13 +72,11 @@ pub async fn upload_file(file: Form<FileData<'_>>) -> Result<Json<MyUuid>> {
 pub fn get_file(f_id: MyUuid) -> Template {
   use self::schema::files::dsl::*;
 
-  let mut connection = &mut establish_connection_pg();
-  
+  let connection = &mut establish_connection_pg();  
   let results: Vec<FileUpload> = files
     .filter(fileid.eq(f_id))
     .select((fileid, chunk))
-    .load::<FileUpload>(connection)    
-    
+    .load::<FileUpload>(connection)   
     .expect("Error loading file chunks");
 
   Template::render("files", context! {files: &results, count: results.len()})
