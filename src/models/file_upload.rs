@@ -8,4 +8,5 @@ use uuid::Uuid;
 pub struct FileUpload {
     pub fileid: Uuid,
     pub chunk: Vec<u8>,
+    pub chunk_index: i32,
 }

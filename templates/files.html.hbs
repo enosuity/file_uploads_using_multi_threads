@@ -8,16 +8,9 @@
 </head>
 <body>
     <section id="hello">
-        <h1>File</h1>
-        New File
-        <ul>
-            {{#each files}}
-            <li>File Id: {{ this.fileid }}</li>
-            <li>Chunk: {{ this.chunk }}</li>
-            {{else}}
-            <p> No files yet</p>
-            {{/each}}
-        </ul>
+        <h1>File ID: {{ fileid }}</h1>
+        <p>Number of chunks: {{ chunk_count }}</p>
+        <img src="{{ chunk }}" alt="Image file"/>
     </section>
 </body>
 </html>

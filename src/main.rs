@@ -11,13 +11,12 @@ pub mod schema;
 
 #[launch]
 fn rocket() -> _ {
-    // let limits = Limits::default()
-    //                .limit("/upload", 128.mebibytes());
     rocket::build()
         .configure(rocket::config::Config {
             port: 5000,
             address: "0.0.0.0".parse().unwrap(),
-            limits: Limits::new().limit("file", 512.megabytes()),
+            limits: Limits::new()
+                        .limit("file", ByteUnit::Megabyte(2)),
             ..Default::default()
         })
         .mount("/", routes![create_post, list, upload_file, get_file])

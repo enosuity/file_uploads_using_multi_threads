@@ -13,6 +13,7 @@ uuid = { version = "1.4.0", features = ["serde", "v4", "fast-rng", "macro-diagno
 tokio = "1.30.0"
 multipart = "0.18.0"
 rocket-multipart-form-data = "0.10.7"
+base64 = "0.22.1"
 
 # [dependencies.rocket_dyn_templates]
 # features = ["handlebars"]

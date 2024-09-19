@@ -1,9 +1,10 @@
 // @generated automatically by Diesel CLI.
 
 diesel::table! {
-    files (fileid) {
+    files (fileid, chunk_index) {
         fileid -> Uuid,
         chunk -> Bytea,
+        chunk_index -> Int4,
     }
 }
 
